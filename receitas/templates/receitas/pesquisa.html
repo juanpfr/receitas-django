@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados da Pesquisa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        body{
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+    <header class="bg-gray-900 text-white p-6 shadow-lg rounded-b-lg">
+        <div class="container mx-auto flex items-center justify-center">
+            <h1 class="text-3xl font-bold">Resultados da Pesquisa</h1>
+        </div>
+    </header>
+    <main class="container mx-auto p-6 mt-8 bg-white rounded-lg shadow-md">
+        <h2 class="text-2xl font-semibold mb-6 text-center">
+            {% if query %}
+                Resultados para: "{{ query }}"
+            {% else %}
+                Nenhum item pesquisado
+            {% endif %}
+        </h2>
+        <div class="flex flex-wrap justify-center gap-6">
+            {% if resultados %}
+                {% for receita in resultados %}
+                    <div class="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out">
+                        <h3 class="text-xl font-bold mb-2 text-gray-800">{{ receita.title }}</h3>
+                        <img src="{{ receita.image.url }}" alt="Imagem item" class="w-full h-48 object-cover rounded-md mb-4">
+                        <p class="text-gray-600 mb-4">{{ receita.description|truncatewords:20 }}</p>
+                        <a href="{% url 'receita_detail' id=receita.id %}" class="text-orange-600 hover:text-orange-800 font-semibold">Ver Receita &rarr;</a>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p class="text-center text-gray-600">Nenhuma receita encontrada.</p>
+            {% endif %}
+        </div>
+    </main>
+    <footer class="mt-12 p-6 text-center text-gray-600">
+        <p>&copy; 2025 Minhas Receitas. Todos os direitos reservados a Juan.</p>
+    </footer>
+</body>
+</html>

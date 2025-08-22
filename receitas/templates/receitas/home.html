@@ -27,12 +27,12 @@
         </div>
     </header>
     <section class="container mx-auto mt-8 p-4 flex justify-center">
-        <div class="w-full max-w-lg flex bg-white rounded-full shadow-md overflow-hidden">
-            <input type="text" placeholder="Pesquisar receitas..." class="flex-grow p-3 text-gray-700 focus:outline-none focus:ring-2 focus-ring-orange-500 rounded-l-full pl-5">
+        <form method="get" action="{% url 'pesquisar_receitas' %}" class="w-full max-w-lg flex bg-white rounded-full shadow-md overflow-hidden">
+            <input type="text" name="q" placeholder="Pesquisar receitas..." class="flex-grow p-3 text-gray-700 focus:outline-none focus:ring-2 focus-ring-orange-500 rounded-l-full pl-5">
             <button class="bg-orange-500 hover:bg-orange-600 text-whit p-3 px-6 rounded r-full transition duration-300 ease-in-out flex items-center justify-center">
                 <i class="fas fa-search mr-2"></i> Pesquisar
             </button>
-        </div>
+        </form>
     </section>
     <main class="container mx-auto p-6 mt-8 bg-white rounded-lg shadow-md">
         <h2 class="text-2xl font-semibold mb-6 text-center">Nossas ultimas receitas</h2>
@@ -41,37 +41,37 @@
                 <h3 class="text-xl font-bold mb-2 text-gray-800">Receita de Bolo de Chocolate</h3>
                 <img src="{% static 'receitas/img/bolo_de_chocolate.png ' %}" alt="Imagem do bolo de chocolate" class="w-full h-48 object-cover rounded-md mb-4">
                 <p class="text-gray-600 mb-4">Um bolo clássico, úmido e delicioso, perfeito para qualquer ocasião.</p>
-                <a href="#" class="text-orange-600 hover:text-orange-800 font-semibold">Ver Receita &rarr;</a>
+                <a href="{% url 'receita_detail' id=1 %}" class="text-orange-600 hover:text-orange-800 font-semibold">Ver Receita &rarr;</a>
             </div>
             <div class="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out">
                 <h3 class="text-xl font-bold mb-2 text-gray-800">Frango Assado com Ervas</h3>
                 <img src="{% static 'receitas/img/frango_assado_com_ervas.png' %}" alt="Imagem do bolo de chocolate" class="w-full h-48 object-cover rounded-md mb-4">
                 <p class="text-gray-600 mb-4">Uma receita simples e saborosa de frango assado com um toque de ervas frescas.</p>
-                <a href="#" class="text-orange-600 hover:text-orange-800 font-semibold">Ver Receita &rarr;</a>
+                <a href="{% url 'receita_detail' id=2 %}" class="text-orange-600 hover:text-orange-800 font-semibold">Ver Receita &rarr;</a>
             </div>
             <div class="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out">
                 <h3 class="text-xl font-bold mb-2 text-gray-800">Salada Mediterrânea Fresca</h3>
                 <img src="{% static 'receitas/img/salada_mediterranea.png' %}" alt="Imagem do bolo de chocolate" class="w-full h-48 object-cover rounded-md mb-4">
                 <p class="text-gray-600 mb-4">Uma salada leve e refrescante, cheia de sabores do Mediterrâneo.</p>
-                <a href="#" class="text-orange-600 hover:text-orange-800 font-semibold">Ver Receita &rarr;</a>
+                <a href="{% url 'receita_detail' id=3 %}" class="text-orange-600 hover:text-orange-800 font-semibold">Ver Receita &rarr;</a>
             </div>
             <div class="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out">
                 <h3 class="text-xl font-bold mb-2 text-gray-800">Torta de Limão Cremosa</h3>
                 <img src="{% static 'receitas/img/torta_de_limao_cremosa.png' %}" alt="Imagem do bolo de chocolate" class="w-full h-48 object-cover rounded-md mb-4">
                 <p class="text-gray-600 mb-4">Uma torta clássica com recheio de limão azedinho e merengue tostado.</p>
-                <a href="#" class="text-orange-600 hover:text-orange-800 font-semibold">Ver Receita &rarr;</a>
+                <a href="{% url 'receita_detail' id=4 %}" class="text-orange-600 hover:text-orange-800 font-semibold">Ver Receita &rarr;</a>
             </div>
             <div class="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out">
                 <h3 class="text-xl font-bold mb-2 text-gray-800">Sopa de Legumes Nutritiva</h3>
                 <img src="{% static 'receitas/img/sopa_de_legumes_nutritiva.png' %}" alt="Imagem do bolo de chocolate" class="w-full h-48 object-cover rounded-md mb-4">
                 <p class="text-gray-600 mb-4">Uma sopa reconfortante e cheia de vegetais frescos, perfeita para dias frios.</p>
-                <a href="#" class="text-orange-600 hover:text-orange-800 font-semibold">Ver Receita &rarr;</a>
+                <a href="{% url 'receita_detail' id=5 %}" class="text-orange-600 hover:text-orange-800 font-semibold">Ver Receita &rarr;</a>
             </div>
             <div class="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out">
                 <h3 class="text-xl font-bold mb-2 text-gray-800">Risoto de Cogumelos Selvagens</h3>
                 <img src="{% static 'receitas/img/risoto_de_cogumelo_selvagem.png' %}" alt="Imagem do bolo de chocolate" class="w-full h-48 object-cover rounded-md mb-4">
                 <p class="text-gray-600 mb-4">Um risoto cremoso e aromático, com uma mistura rica de cogumelos selvagens.</p>
-                <a href="#" class="text-orange-600 hover:text-orange-800 font-semibold">Ver Receita &rarr;</a>
+                <a href="{% url 'receita_detail' id=6 %}" class="text-orange-600 hover:text-orange-800 font-semibold">Ver Receita &rarr;</a>
             </div>
         </div>
     </main>

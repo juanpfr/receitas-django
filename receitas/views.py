@@ -15,4 +15,16 @@ def receita_detail(request, id):
     }
 
     return render(request, 'receitas/receita_detail.html', context)
+
+def pesquisar_receitas(request):
+    query = request.GET.get('q')
+    resultados = []
+    if query:
+        resultados = Receita.objects.filter(title__icontains=query)
+
+    context = {
+        'query': query,
+        'resultados': resultados,
+    }
     
+    return render(request, 'receitas/pesquisa.html', context)
