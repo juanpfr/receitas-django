@@ -17,7 +17,7 @@ def pesquisar_receitas(request):
     if query:
         resultados = Receita.objects.filter(title__icontains=query)
 
-    return render(request, 'receita/pesquisa.html',{
+    return render(request, 'receitas/pesquisa.html',{
         'query': query,
         'resultados': resultados
     })
