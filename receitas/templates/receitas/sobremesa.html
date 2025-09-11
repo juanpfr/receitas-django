@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Sobremesas - Minhas Receitas{% endblock %}
+
+{% block content %}
+    <h2 class="text-2xl font-bold mb-6">Receitas de Sobremesas</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Exemplo de card -->
+        <div class="bg-gray-100 p-4 rounded-lg shadow hover:shadow-lg transition">
+            <img src="{% static 'img/sobremesa1.jpg' %}" alt="Sobremesa" class="rounded-lg mb-4">
+            <h3 class="text-lg font-semibold">Bolo de chocolatson</h3>
+            <p class="text-gray-600">Sobremesa top.</p>
+        </div>
+        <!-- Outra receita top -->
+    </div>
+{% endblock %}
