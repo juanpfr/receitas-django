@@ -11,6 +11,36 @@
             </button>
         </form>
     </section>
+    <nav class="relative z-10 flex justify-center space-x-4 mb-8 mt-8">
+  <!-- Botão Todos -->
+  <a href="{% url 'home' %}"
+     class="px-4 py-2 rounded-full bg-gray-200 text-gray-900 hover:bg-gray-300 
+            {% if not request.GET.categoria %}bg-orange-500 text-white{% endif %}">
+    Todos
+  </a>
+
+  <!-- Botão Comida -->
+  <a href="{% url 'home' %}?categoria=comida"
+     class="px-4 py-2 rounded-full bg-gray-200 text-gray-900 hover:bg-gray-300 
+            {% if request.GET.categoria == 'comida' %}bg-orange-500 text-white{% endif %}">
+    Comida
+  </a>
+
+  <!-- Botão Sobremesa -->
+  <a href="{% url 'home' %}?categoria=sobremesa"
+     class="px-4 py-2 rounded-full bg-gray-200 text-gray-900 hover:bg-gray-300 
+            {% if request.GET.categoria == 'sobremesa' %}bg-orange-500 text-white{% endif %}">
+    Sobremesa
+  </a>
+
+  <!-- Botão Drink -->
+  <a href="{% url 'home' %}?categoria=drink"
+     class="px-4 py-2 rounded-full bg-gray-200 text-gray-900 hover:bg-gray-300 
+            {% if request.GET.categoria == 'drink' %}bg-orange-500 text-white{% endif %}">
+    Drink
+  </a>
+</nav>
+
     <!-- Lista de receitas -->
         <h2 class="text-2xl font-semibold mb-6 text-center">Nossas ultimas receitas</h2>
         <div class="flex flex-wrap justify-center gap-6">
